@@ -1,0 +1,39 @@
+
+
+@mixin navbar-theme ($navbar-color, $bg-color) {
+	border-color: $navbar-color;
+	background-color: $bg-color;
+
+	%link {
+		color: $navbar-color;
+		text-decoration: none;
+	}
+
+	a.link {
+		@extend %link;
+
+		&:hover {
+			color: $bg-color;
+			background-color: $navbar-color;
+		}
+	}
+
+	a {
+		@extend %link;
+	}
+
+}
+
+.navbar {
+	width: 100%;
+	height: 75px;
+	border: 2px solid;
+	margin: 0px;
+
+	@include navbar-theme(purple, white);
+
+	@import "navbar/brand.scss";
+	@import "navbar/links.scss";
+	
+	
+}
